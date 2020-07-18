@@ -1,18 +1,16 @@
-const superb = require('superb')
-
 module.exports = {
   prompts() {
     return [
       {
         name: 'name',
-        message: 'What is the name of the new project',
+        message: 'What is the name of this template?',
         default: this.outFolder,
         filter: val => val.toLowerCase()
       },
       {
         name: 'description',
         message: 'How would you descripe the new project',
-        default: `my ${superb()} project`
+        default: `A Specless creative template.`
       },
       {
         name: 'username',
@@ -25,14 +23,6 @@ module.exports = {
         name: 'email',
         message: 'What is your email?',
         default: this.gitUser.email,
-        store: true
-      },
-      {
-        name: 'website',
-        message: 'The URL of your website',
-        default({ username }) {
-          return `github.com/${username}`
-        },
         store: true
       }
     ]
