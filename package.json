@@ -1,0 +1,25 @@
+{
+  "name": "sao-specless-template",
+  "version": "0.0.0",
+  "description": "Generates a Specless boilerplate creative template",
+  "repository": {
+    "url": "specless/sao-specless-template",
+    "type": "git"
+  },
+  "author": "specless <steve@gospecless.com> (github.com/specless)",
+  "license": "MIT",
+  "files": [
+    "saofile.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "superb": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "sao": "^1.0.0"
+  }
+}
