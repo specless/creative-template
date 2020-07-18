@@ -12,16 +12,10 @@ yarn global add sao
 npm i -g sao
 ```
 
-### From npm
+### Run
 
 ```bash
-sao specless-template my-project
-```
-
-### From git
-
-```bash
-sao specless/sao-specless-template my-project
+sao specless/creative-template my-project
 ```
 
 ## License

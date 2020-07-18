@@ -1,9 +1,24 @@
+const download = require('download-git-repo');
+const path = require('path');
+
+const downloadTemplate = () => {
+  return new Promise((resolve, reject) => {
+    console.log('Downloading Specless Framework...');
+    const templateFolder = path.resolve(__dirname, 'template');
+    download('specless/framework', templateFolder, (err) => {
+        console.log(err ? 'Error Downloading Specless Framework' : 'Success Downloading Specless Framework')
+        resolve();
+    });
+  })
+}
+
 module.exports = {
-  prompts() {
+  async prompts() {
+    await downloadTemplate();
     return [
       {
         name: 'name',
-        message: 'What is the name of this template?',
+        message: 'What is the name of this creative template?',
         default: this.outFolder,
         filter: val => val.toLowerCase()
       },
