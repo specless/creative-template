@@ -14,11 +14,25 @@ const downloadTemplate = () => {
 
 module.exports = {
   async prompts() {
+    console.log(this);
     await downloadTemplate();
     return [
       {
+        name: 'type',
+        message: 'What kind of project do you want to create?',
+        default: 'Creative Template',
+        options: ['Creative Template', 'Ad Placement'],
+        filter: val => {
+          if (val === 'Creative Template') {
+            return 'template'
+          } else {
+            return 'placement'
+          }
+        }
+      },
+      {
         name: 'name',
-        message: 'What is the name of this creative template?',
+        message: `Please provide a name for this project:`,
         default: this.outFolder,
         filter: val => val.toLowerCase()
       },
@@ -55,6 +69,7 @@ module.exports = {
     }
   ],
   async completed() {
+    console.log(this);
     this.gitInit()
     await this.npmInstall()
     this.showProjectTips()
